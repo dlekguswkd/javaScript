@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>js공부</title>
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>switch</h2>
+
+
+<!-- -------------------------------------------------------  -->
+<script>
+    console.log('switch문 예제');
+        let code = prompt('과목코드를 입력하세요');
+        console.log(code);
+        console.log(typeof code);   // string
+
+        let no = Number.parseInt(code); // 자료형 int로 바꾸기 (문자형을 숫자형으로)
+        console.log(no);
+        console.log(typeof no);  
+
+        //switch문은 엄격
+        switch(no) {
+            case 1: 
+                console.log('101호');
+                break;
+
+            case 2: 
+                console.log('202호');
+                break;
+
+            case 3: 
+                console.log('303호');
+                break;
+
+            case 4: 
+                console.log('404호');
+                break;
+
+            default:
+                console.log('상담원');
+                break;
+        }
+
+</script>
+
+<!-- -------------------------------------------------------  -->
+    </body>
+</html>

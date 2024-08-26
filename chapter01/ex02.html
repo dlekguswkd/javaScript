@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>js공부</title>
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>변수</h2>
+
+
+
+
+<!-- -------------------------------------------------------  -->
+    <script>
+        console.log('#변수선언');
+        // var와 let 똑같음 둘다 쓸수있음
+
+        // var는 동일한 이름의 변수를 선언할 수 있다 (원래 있던건 사라짐)
+        var no = 3;     //자료형을 쓰지 않음 그냥 변수 
+        var str = '안녕하세요';
+        var boo = 3>5;
+        var year, month, day;   // 자료형 상관없이 한꺼번에 가능
+        year = '2024년'
+
+        console.log(str);
+        console.log(year);
+
+        // let은 동일한 이름의 변수를 선언할 수 없다 (사용 권장)
+        let no2 = 3;
+        let str2 = '안녕하세요';
+        let boo2 = 3>5;
+        let year2, month2, day2;
+        year2 = 2024;
+
+        console.log(year2 + 1);
+
+        console.log('# var 같은 이름의 변수선언가능');
+        var name = '정우성';
+        console.log(name);
+
+        var name = '유재석';
+        console.log(name);
+
+        // 결론 let 을 쓰자
+
+        console.log('================================');
+        // 상수 선언방법(보통 대문자로 표기) 상수값은 바꿀수 없음 (바뀌지않는)
+        console.log('# const 상수');
+        const MAX = 3;
+        //MAX = 20;
+        console.log(MAX);
+
+        /* 상수는 변수선언과 동시에 초기화 해야한다
+        const MIN;
+        MIN = 0;
+        */
+
+    
+        console.log('================================');
+        // 자료형 확인
+        console.log('# 값 대입시 자료형이 결정된다.');
+
+        let data;
+        console.log(typeof data);   // undefined
+
+        data = 15;
+        console.log(typeof data);   // number
+
+        data = '안녕';
+        console.log(typeof data);   // string
+
+        data = 5>3;
+        console.log(typeof data);  // boolean
+
+        console.log('================================');
+        // null 과 undefined
+        console.log('# undefined 와 null 비교');
+        
+        let myVar1;
+        let myVar2 = null;
+
+        console.log(myVar1);    // undefined
+        console.log(myVar2);    // null
+
+        console.log('================================');
+        console.log('# ==   ===  비교');
+
+        console.log( 123 == 123);       // true
+        console.log( 123 == '123');     // true     모양만 맞아도
+        console.log( 123 === '123');    // false    자료형까지 (엄격)
+
+        console.log('================================');
+        let var01;          // undefined
+        let var02 = null;   // null
+        console.log(var01);
+        console.log(var02);
+
+        console.log(var01 == var02);    // undefined == null  => true
+        console.log(var01 === var02);   // undefined === null  => false
+
+        console.log('==========');  // ''  0  false
+        console.log('' == false);       // true
+        console.log('' === false);      // false
+
+        console.log('' == 0);       // true
+        console.log('' === 0);      // false
+
+        console.log(false == 0);       // true
+        console.log(false === 0);       // false
+
+
+
+    </script>
+
+<!-- -------------------------------------------------------  -->
+    </body>
+</html>

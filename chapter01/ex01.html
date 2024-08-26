@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>js공부</title>
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>기본데이터타입</h2>
+
+
+<!-- -------------------------------------------------------  -->
+<script>
+    window.console.log("aaa");  //window를 생략할 수 있다
+    console.log('================================');
+    console.log('#데이터타입 확인');
+    //자바스크립트 기본 자료형은 number string boolean
+    console.log(typeof 1);
+    console.log(typeof 1.5);
+    console.log(typeof '한');
+    console.log(typeof '안녕하세요');
+    console.log(typeof (5>3));
+    console.log(typeof (5<3));
+
+    console.log('================================');
+
+    // number 숫자형
+    console.log('#number 형');
+    console.log(13+5);
+    console.log(13-5);
+    console.log(13*5);
+    console.log(13/5);  // 2.6 소수점으로 나옴 2 X 
+    console.log(13%5);  // 나머지 3
+
+    console.log(13+5.2);    // 18.2
+    console.log(5+3*2);     // 5 + 6 => 11
+    console.log((5+3)*2);   // 8 * 2 => 16
+
+    console.log('================================');
+
+    // string 문자형
+    console.log('#string 형');
+    console.log("동해물과 백두산이");
+    console.log('동해물과 백두산이');
+
+    console.log("동해물과 \"백두산\"이");
+    console.log('동해물과 "백두산"이');
+
+    console.log('동해물과 \'백두산\'이');
+    console.log("동해물과 '백두산'이");
+
+    console.log("동해물과 '백\t두산'이");   //tab 띄어쓰기
+    console.log("동해물과 '백\n두산'이");   //줄바꿈
+    console.log("동해물과 '백\\두산'이");   // \이모양하려면 두개써야됨
+
+    console.log('================================');
+     // boolean 형
+    console.log('#boolean 형');
+    console.log(52>89);
+    console.log(52<89);
+
+    console.log('#  &&  ||  연산자');
+    console.log( (5>3) && (5<3) );     // T && F => F  
+    console.log( (5>3) || (5<3) );     // T || F => T
+    console.log( !((5>3) || (5<3)) );     // !T  => F
+    console.log( !(5>3) );       // !T  => F
+
+
+</script>
+<!-- -------------------------------------------------------  -->
+
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>js공부</title>
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>if문예제</h2>
+
+
+<!-- -------------------------------------------------------  -->
+<script>
+    console.log('if문 예제');
+
+    let no = window.prompt('점수를 입력하세요.');
+    
+    console.log(no);
+
+    // 주어진 숫자가 0보다 크면 "양수" 0보다 작으면 "음수" 0일때는 "0" 을 브라우저에 출력하세요.
+
+    if(no>0) {
+        console.log('양수');
+    }else if(no<0) {
+        console.log('음수');
+    }else {
+        console.log('0')
+    }
+
+
+    if(no === 60) {
+        console.log('같다');        
+    }else {
+        console.log('다르다')       // no는 자료형이 string이라서 다르다고 나옴
+    }
+
+</script>
+
+<!-- -------------------------------------------------------  -->
+    </body>
+</html>
