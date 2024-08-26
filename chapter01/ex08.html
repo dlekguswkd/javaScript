@@ -15,21 +15,23 @@
 <script>
     console.log('for문 과제');
 
-    for(let dan=2; dan<=9; dan++) {
-        for (let i = 1; i <= 9; i++) { 
-            console.log(dan + '*' + i + '=' + dan*i)
+    for(let i=1; i<=5; i++) {       // 줄 수
+        for (let j = 1; j <= i; j++) {      // *갯수
+            console.log('*');
         }
+        console.log('');
     }
     
+
     // html
-    for(let dan=2; dan<=9; dan++) {
-        for (let i = 1; i <= 9; i++) { 
-            document.write(dan + '*' + i + '=' + dan*i + '&nbsp;&nbsp;&nbsp;&nbsp;')
+    for(let i=1; i<=5; i++) {
+        for (let j = 1; j <= i; j++) { 
+            document.write('*');
         }
         document.write('<br>');
     }
 
-    
+
 </script>
 
 <!-- -------------------------------------------------------  -->
