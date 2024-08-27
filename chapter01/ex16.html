@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>js공부</title>
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>리스트 -객체 데이터 다루기</h2>
+
+
+<!-- -------------------------------------------------------  -->
+<script>
+    console.log('리스트 -객체 데이터 다루기');
+    // 배열 만들기  *자바의 배열이 절대 아님 상상도 하지마...
+    let personList = [];
+
+    // vo1  객체 생성시 데이터 넣기
+    let personVo1 = {
+        no: 1,      // no=  (X)
+        name: '박명수',
+        hp: '010-1111-1111',
+        company: '02-1111-1111'
+    };
+
+    // vo2  객체 생성 후 데이터 넣기
+    let personVo2 = {};
+    personVo2.no = 2;
+    personVo2.name = '유재석';
+    personVo2.hp = '010-2222-2222';
+    personVo2.company = '02-2222-2222';
+
+    // vo3  두가지 다 해보기
+    let personVo3 = {
+        no: 3,
+        name: '서장훈'
+    };
+    personVo3.hp = '010-3333-3333';
+    personVo3.company = '02-3333-3333';
+
+
+    console.log(personVo1);
+    console.log(personVo2);
+    console.log(personVo3);
+
+    // 리스트에 담기
+    personList.push(personVo1);
+    personList.push(personVo2);
+    personList.push(personVo3);
+
+    console.log(personList);
+
+    console.log(personList[1].name);        // 유재석
+
+    console.log('------------------------');
+
+    // 전체 이름 출력
+    for(let i=0; i<personList.length; i++) {
+        console.log(personList[i].name);
+    }
+
+    
+
+
+</script>
+
+<!-- -------------------------------------------------------  -->
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>js공부</title>
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>변수의 범위</h2>
+
+
+<!-- -------------------------------------------------------  -->
+<script>
+    console.log('변수의 범위');
+    // 덮어쓰지 않음
+
+    /*
+    let str = 'global';         //전역 변수를 선언 (이 페이지 어디든)
+
+    // 함수정의
+    function checkScope() {
+        let str = 'local';      // 함수 안에
+        console.log(str);       
+    }
+
+    checkScope();               // -> local
+
+    console.log(str);           // -> global
+    */
+
+    //////////////////////////////////////////////////////////
+
+    let str = 'global';
+
+    function checkScope() {
+        str = 'local';
+        str2 = '로컬';          // 없는변수  -> 실행되면 전역으로 선언됨 -> 이경우는 쓰지말것 피해가라 (헷갈림)
+        console.log(str); 
+    }
+
+    // 실행
+    checkScope();               // -> local
+
+    console.log(str);           // -> local
+    console.log(str2);          // -> 로컬  --> 실행되면서 없던게 생김 (실행이 안되면 에러남)
+
+
+</script>
+
+<!-- -------------------------------------------------------  -->
+    </body>
+</html>

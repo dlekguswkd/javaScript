@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>js공부</title>
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>배열</h2>
+
+
+<!-- -------------------------------------------------------  -->
+<script>
+    console.log('배열');
+    // 갯수를 정하지 않아도 되고 (object) 자료형이 다르게 다 가능
+    
+    let arr00 = new Array();
+    arr00[0] = 1;
+    arr00[1] = 2;
+    arr00[3] = 3;
+    console.log(arr00[3]);
+
+    console.log('--------------');
+    //////////////////////////////////////////////////////
+
+    let arr01 = [10, 20, 30, 40, 50];
+    console.log(arr01[0]);      // 0번째방 꺼내기
+    console.log(arr01[3]);      // 40 꺼내기
+
+    let no = arr01[2];          // 30 변수에 담기
+    console.log(no);            // 30 
+
+    arr01[6]=60;
+    console.log(arr01[6]);
+
+    console.log('--------------');
+    //////////////////////////////////////////////////////
+
+    let arr02 = [];         // -> let arr02 = new Array();  의 의미(배열)
+    arr02[0] = 1;
+    arr02[1] = 2;
+    arr02[2] = 3;
+
+    // 전체출력하기
+    for(let i=0; i<arr02.length; i++) {
+        console.log(arr02[i]);
+    }
+
+    console.log('--------------');
+    //////////////////////////////////////////////////////
+
+    /*
+    function printName () {
+        console.log('정우성');
+    }
+    */
+
+    let arr04 = [];     // 1  2.5  '안녕' 'hello' 5>3  function
+    arr04[0] = 1;
+    arr04[1] = 2.5;
+    arr04[2] = '안녕';
+    arr04[3] = 'hello';
+    arr04[4] = 5>3;
+    //arr04[5] = printName;       // 함수가 나옴
+    // 함수가 나옴
+    arr04[5] = function() {        
+        console.log('정우성');
+    }; 
+    
+    // 읽는다
+    for(let i=0; i<arr04.length; i++) {
+        console.log(arr04[i]);
+    }
+
+    console.log('=================================');
+
+    for(let i=0; i<arr04.length; i++) {
+        if(typeof arr04[i] == 'function') {
+            arr04[i]();
+        }else {
+            console.log(arr04[i]);
+        }
+    }
+
+    console.log('--------------');
+    // 실행됨
+    // printName();
+    arr04[5]();     // 안에 내용이 나옴
+
+    console.log(typeof arr04[5]);       //function 자료형
+
+    // 변수에는 메소드를 넣을수 있다
+    // 변수를 값을 읽는다.
+    // 메소드를 읽는다 와 메소드를 실행한다를 구분해라 
+
+    console.log('--------------');
+    // 배열안에 배열
+    let arr05 = [1, 2.5, '안녕', ['정우성', '박명수', '유재석']];
+
+    console.log(arr05[1]);
+    console.log(arr05[3][0]);       //3번째방에 0번째방 --> 정우성 
+
+    console.log('--------------');
+    
+    console.log('--------------');
+    // 배열 마지막방에 추가해서 넣기
+    let arr06 = ['이효리'];
+    arr06.push('정우성');
+    arr06.push('박명수');
+    arr06.push('유재석');
+
+    for(let i=0; i<arr06.length; i++) {
+        console.log(arr06[i]);
+    }
+
+    arr06.pop();        // 마지막꺼 지워줘(꺼내줘)
+    console.log(arr06);
+    
+
+</script>
+
+<!-- -------------------------------------------------------  -->
+    </body>
+</html>
