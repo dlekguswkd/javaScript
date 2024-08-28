@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="" rel="stylesheet">
+
+</head>
+
+<body>
+	
+	<!--클래스-->
+	<ul>
+		<li class="red"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="blue"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="red"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="blue"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="green"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	</ul>
+
+<!-- ---------------------------------------------------- -->
+<script>
+	//클래스는 무조건 배열 하나여도 배열로 옴
+
+document.addEventListener('DOMContentLoaded', function(){
+
+	//클래스명이 red인 태그의 첫번쨰를 빨간색으로
+	let rTags = document.getElementsByClassName('red');
+	console.log(rTags);
+	rTags[0].style.color='#ff0000';
+
+	// 클래스명이 blue인 태그의 두번쨰를 초록색으로
+	let bTags = document.getElementsByClassName('blue');
+	console.log(bTags);
+	bTags[1].style.color='#0000ff';
+
+});
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>

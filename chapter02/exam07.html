@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="" rel="stylesheet">
+
+</head>
+
+<body>
+	<h1 id="logo">자바스크립트</h1>
+	<div id="nav">
+		<ul>
+			<li id="board">게시판</li>
+			<li id="gallery" class="active">갤러리</li>
+			<li id="guestbook">방명록</li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<p class="red">내용1입니다.</p>
+
+		<p class="blue">내용2입니다.</p>
+	</div>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>핸드폰</th>
+				<th>회사</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="n-1">
+				<td>정우성</td>
+				<td id="h-1">010-1111-1111</td>
+				<td>02-1111-1111</td>
+			</tr>
+			<tr id="n-2">
+				<td>이효리</td>
+				<td id="h-2">010-2222-2222</td>
+				<td>02-2222-2222</td>
+			</tr>
+			<tr id="n-3">
+				<td>박명수</td>
+				<td id="h-3">010-3333-3333</td>
+				<td>02-3333-3333</td>
+			</tr>
+		</tbody>
+	</table>
+
+<!-- ---------------------------------------------------- -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+	console.log('완료')
+
+	//h1
+	let tag01 = document.querySelector('h1');
+	console.log(tag01);
+
+	// h1 의 부모 알아내기
+	console.log(tag01.parentElement);		// body
+
+
+	console.log('-------------------------------');
+
+	// red 클래스 부모 태그 알아내기
+	let tag02 = document.querySelector('.red');
+	console.log(tag02);
+	console.log(tag02.parentElement);		// div
+
+	console.log('-------------------------------');
+
+	// n-3 아이디 부모태그 알아내기
+	let tag03 = document.querySelector('#n-3');
+	console.log(tag03);
+	console.log(tag03.parentElement);		// tbody
+
+	console.log('-------------------------------');
+
+	// 이효리 핸드폰 td 알아내기
+	let tag04 = document.querySelector('#h-2');
+	console.log(tag04);
+	
+	// #h-2 위치일떄 본인의 tr의 id값 출력
+	console.log(tag04.id);			// h-2
+
+	// #h-2 위치일때 이효리 이름 출력	 형제 찾기 (내 앞)
+	console.log(tag04.previousElementSibling.innerHTML);	// 이효리
+
+	// #h-2 위치일때 이효리 회사번호 출력   형제찾기 (내 뒤)
+	console.log(tag04.nextElementSibling.textContent);		// 02-2222-2222	
+
+	// #h-2 위치일때 정우성 회사번호 출력						// 02-1111-1111
+	// 부모 앞형제 마지막자식 텍스트
+	console.log(tag04.parentElement.previousElementSibling.lastElementChild.innerHTML);
+
+	// #h-2 위치일때 박명수 이름 출력						// 박명수
+	// 부모 뒤형제 첫번째 자식 텍스트
+	console.log(tag04.parentElement.nextElementSibling.firstElementChild.textContent);
+
+});
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+
+</html>

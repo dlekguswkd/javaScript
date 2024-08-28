@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>자바<strong>스크립트</strong></h1>
+	<div id="nav">
+		<ul>
+			<li id="board"><span>게</span>시판</li>
+			<li id="gallery" class="active"><span>갤</span>러리</li>
+			<li id="guest"><span>방</span>명록</li>
+		</ul>
+	</div>
+
+	<form action="" method="">
+		<label class="form-text">아이디</label>
+		<input id="txt-userId" class="form-txt" type="text" name="userId" value="jung" placeholder="아이디를 입력해주세요"><br>
+		
+		<label class="form-text">패스워드</label>
+		<input type="password" name="pw" value=""><br>
+
+		<label class="form-text">이름</label>
+		<input type="text" name="userName" value="정우성"><br>
+		
+		<button type="submit">전송</button>
+	</form>
+
+	<a class="box red" href="https://www.naver.com" target="_blank">네이버</a>
+
+
+	<p id="p01">자바<strong>스크립트</strong></p>
+	<p id="p02">자바<strong>스크립트</strong></p>
+
+<!-- ---------------------------------------------------- -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+	//태그네임 요소.tagName
+	let tag01 = document.querySelector('#nav');
+	console.log(tag01);
+	console.log(tag01.tagName);		//태그네임 -> 대문자 	DIV
+
+	//target='blank' 태그네임  속성값은 []
+	let tag02 = document.querySelector('[target="_blank"]');
+	console.log(tag02);
+	console.log(tag02.tagName);		// A
+
+	//아이디 알아내기
+	let tag03 = document.querySelector('div');
+	console.log(tag03);
+	console.log(tag03.id);		// nav
+
+	// li태그 가져와서 각각의 아이디 알아내기
+	let tags04 = document.querySelectorAll('li');
+	console.log(tags04);
+	for(let i=0; i<tags04.length; i++) {
+		console.log(tags04[i].id);		// board , gallery , guest
+	}
+
+	//클래스명 알아내기
+	let tags05 = document.querySelectorAll('form>label');
+	console.log(tags05);
+	console.log(tags05[0].className);
+	console.log(tags05[2].className);
+
+	// a태그의 없는 클래스명 
+	let tag06= document.querySelector('a');
+	console.log(tag06);
+	console.log(tag06.className);		// 그냥 아무것도 안알려줌
+
+	// 기타속성
+	//imput 에 있는
+	let tag07 = document.querySelector('#txt-userId');
+	console.log(tag07);
+	console.log(tag07.id);			// txt-userId
+	console.log(tag07.tagName);		// 대문자 INPUT
+	console.log(tag07.className);	// form-txt
+	console.log(tag07.type);		// text
+	console.log(tag07.name);		// userId
+	console.log(tag07.value);		// jung
+	console.log(tag07.placeholder);	// 아이디를 입력해주세요
+
+	console.log('-------------------------------');
+
+	// 기타속성
+	// a 태그에 있는
+	let tag08 = document.querySelector('a');
+	console.log(tag08);
+	console.log(tag08.id);			// 없어서 아무것도 안나옴
+	console.log(tag08.className);	// box red
+	console.log(typeof tag08.className);	// string
+	console.log(tag08.tagName);		// A 대문자
+	console.log(tag08.href);		// https://www.naver.com/
+	console.log(tag08.target);		// _blank
+
+	// 두개가 똑같은걸 의미함
+	console.log(tag08.innerHTML);	// 네이버        
+	console.log(tag08.textContent);		// 네이버
+
+	console.log('-------------------------------');
+
+	// innerHTML 과 textContent 차이점
+	// li요소 가져오기
+	let tags09 = document.querySelectorAll('ul>li');
+	console.log(tags09);
+	// 태그를 포함에서 안에 있는 모든거
+	console.log(tags09[0].innerHTML);		// <span>게</span>시판
+	// 사람눈에 보이는 택스트만 
+	console.log(tags09[0].textContent);		//게시판
+
+	
+	//h1 요소 가져오기
+	let tag10 = document.querySelector('h1');
+	console.log(tag10);
+	console.log(tag10.innerHTML);		// 자바<strong>스크립트</strong>
+	console.log(tag10.textContent);		// 자바스크립트
+
+});
+
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>

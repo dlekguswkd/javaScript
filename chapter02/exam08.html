@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="" rel="stylesheet">
+
+</head>
+
+<body>
+	<h1 id="logo">자바스크립트</h1>
+	<div id="nav">
+		<ul>
+			<li id="board">게시판</li>
+			<li id="gallery" class="active">갤러리</li>
+			<li id="guestbook">방명록</li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<p class="red">내용1입니다.</p>
+
+		<p class="blue">내용2입니다.</p>
+	</div>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>핸드폰</th>
+				<th>회사</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="n-1">
+				<td>정우성</td>
+				<td id="h-1">010-1111-1111</td>
+				<td>02-1111-1111</td>
+			</tr>
+			<tr id="n-2">
+				<td>이효리</td>
+				<td id="h-2">010-2222-2222</td>
+				<td>02-2222-2222</td>
+			</tr>
+			<tr id="n-3">
+				<td>박명수</td>
+				<td id="h-3">010-3333-3333</td>
+				<td>02-3333-3333</td>
+			</tr>
+		</tbody>
+	</table>
+
+<!-- ---------------------------------------------------- -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+	console.log('완료');
+
+	// 리스트 만들기
+	let personList = [];
+
+	// 정우성 정보 id이용해서 출력
+	let info1 = document.querySelector('#h-1');
+	console.log(info1.previousElementSibling.innerHTML);		// 정우성
+	console.log(info1.innerHTML);							// 010-1111-1111
+	console.log(info1.nextElementSibling.innerHTML);			// 02-1111-1111
+
+	// vo1  객체 생성 데이터 넣기  정우성
+	let personVo1 = {
+		name: info1.previousElementSibling.innerHTML,
+		hp: info1.innerHTML,
+		company: info1.nextElementSibling.innerHTML
+	};
+
+	console.log(personVo1);
+	
+	// ------------------------------------------------------------
+
+	// 이효리 정보 id 이용해서 출력
+	let info2 = document.querySelector('#h-2');
+	console.log(info2.previousElementSibling.innerHTML);		// 이효리
+	console.log(info2.innerHTML);							// 010-2222-2222
+	console.log(info2.nextElementSibling.innerHTML);			// 02-2222-2222
+
+	// vo2 객체 생성 데이터 넣기 이효리
+	let personVo2 = {
+		name: info2.previousElementSibling.innerHTML,
+		hp: info2.innerHTML,
+		company: info2.nextElementSibling.innerHTML
+	}
+	
+	console.log(personVo2);
+
+	// ------------------------------------------------------------
+
+	// 박명수 정보 id 이용해서 출력
+	let info3 = document.querySelector('#h-3');
+	console.log(info3.previousElementSibling.innerHTML);	// 박명수
+	console.log(info3.innerHTML);			// 010-3333-3333
+	console.log(info3.nextElementSibling.innerHTML);		// 02-3333-3333
+
+	// vo3 객체 생성 데이터 넣기 박명수
+	let personVo3 = {
+		name: info3.previousElementSibling.innerHTML,
+		hp: info3.innerHTML,
+		company: info3.nextElementSibling.innerHTML
+	}
+
+	console.log(personVo3);
+	
+    // 리스트에 담기
+	personList.push(personVo1);
+    personList.push(personVo2);
+    personList.push(personVo3);
+
+	console.log('=========================')
+	console.log(personList);
+	console.log('=========================')
+
+});
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>

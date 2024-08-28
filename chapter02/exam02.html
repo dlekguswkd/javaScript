@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="" rel="stylesheet">
+
+</head>
+
+<body>
+	<!--태그-->
+    <h1>JavaScript</h1>
+	<ul>
+		<li> 순서1 순서1 순서1 순서1 순서1 </li>
+		<li> 순서2 순서2 순서2 순서2 순서2 </li>
+		<li> 순서3 순서3 순서3 순서3 순서3 </li>
+		<li> 순서4 순서4 순서4 순서4 순서4 </li>
+	</ul>
+	
+	<p> 텍스트1 텍스트1 텍스트1 텍스트1 텍스트1 </p>
+	<p> 텍스트2 텍스트2 텍스트2 텍스트2 텍스트2 </p>
+	<p> 텍스트3 텍스트3 텍스트3 텍스트3 텍스트3 </p>
+	<p> 텍스트4 텍스트4 텍스트4 텍스트4 텍스트4 </p>
+
+<!-- ---------------------------------------------------- -->
+<script>
+	//태그는 무조건 배열 하나여도 배열로 옴
+
+document.addEventListener('DOMContentLoaded', function(){
+	// 					 태그네임으로 가져오기(해당페이지의 모든 li태그를 가져옴)-배열의 형식
+	let liTags = document.getElementsByTagName('li');
+	console.log(liTags);
+	// 첫번쨰 li요소 빨간색
+	liTags[0].style.color='#ff0000';	// 0번쨰방만 색깔바꾸기
+
+	// 모든 p태그를 파란색으로 변경
+	let pTags = document.getElementsByTagName('p');
+	console.log(pTags);
+	for(let i=0; i<pTags.length; i++) {
+		pTags[i].style.color='#0000ff';
+	}
+
+	// h1 초록색	-> 해당요소가 한개여도 배열로 온다
+	let h1Tags = document.getElementsByTagName('h1');
+	console.log(h1Tags);
+	h1Tags[0].style.color='#00ff00';		// 한개여도 0번째방을 불러줘야한다
+
+});
+
+
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>
