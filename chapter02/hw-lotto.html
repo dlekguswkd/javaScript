@@ -45,6 +45,33 @@
 
 <!-- ---------------------------------------------------- -->
 <script>
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('dom tree 완료')
+
+    // 등록버튼 꺼내기
+    let btn = document.querySelector('#btnMakeNo');
+    console.log(btn);
+
+    // 등록버튼 누를때
+    btn.addEventListener('click', function(){
+        console.log('등록버튼 클릭');
+
+        let tdTags = document.querySelectorAll('td');
+        console.log(tdTags)
+        //console.log(tdTags[0].textContent)
+        tdTags[0].textContent = Math.floor(Math.random() * 100) + 1;
+        //  Math.floor 소수점 버리기
+        console.log(tdTags[0].textContent = Math.floor(Math.random() * 45) + 1)
+
+        for(let i=0; i<tdTags.length-1; i++) {
+            tdTags[i].textContent = Math.floor(Math.random() * 45) + 1; // 중복됨
+        }
+
+        // 중복안되는 방법은?..
+
+    });
+
+});
 
 
 

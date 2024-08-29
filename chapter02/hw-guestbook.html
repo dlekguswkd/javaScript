@@ -76,33 +76,32 @@ document.addEventListener('DOMContentLoaded', function(){
         // 리스트 만들기
         let guestbookList = [];
 
-        // td 태그로 꺼내기
+        // table 태그로 꺼내기
         let taTags = document.querySelectorAll('div>table');
         console.log(taTags);
 
-        let personVo1 = taTags[0];
-        console.log(personVo1);
+        // let personVo1 = taTags[0];
+        // console.log(personVo1);
+        // let tdTags1 = document.querySelectorAll(personVo1)
 
-        let tdTags1 = document.querySelectorAll(personVo1)
+        for(let i=0; i<taTags.length; i++) {
+            let tdTags = taTags[i].querySelectorAll('td');
+            console.log(tdTags);
 
-        // for(let i=0; i<tdTags1.length; i++) {
+            let personVo = {
+                no: tdTags[0].textContent,
+                name: tdTags[1].textContent,
+                regDate: tdTags[2].textContent,
+                company: tdTags[4].textContent
+            };
+            guestbookList.push(personVo);
+        }
+        console.log(guestbookList);
+
         //     let no = tdTags1[i].children[0].textContent;
         //     let name = tdTags1[i].children[1].textContent;
         //     let regDate = tdTags1[i].children[2].textContent;
         //     let company = tdTags1[i].children[3].textContent;
-
-        //     let personVo1 = {
-        //         no: no,
-        //         name: name,
-        //         regDate: regDate,
-        //         company: company
-        //     }
-
-        //     guestbookList.push(personVo1);
-
-        // }
-
-        // console.log(guestbookList);
 
 
     });
