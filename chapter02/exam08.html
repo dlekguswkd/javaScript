@@ -106,6 +106,8 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
 
 	console.log(personVo3);
+
+	// ------------------------------------------------------------
 	
     // 리스트에 담기
 	personList.push(personVo1);
@@ -120,6 +122,71 @@ document.addEventListener('DOMContentLoaded', function(){
 	for(let i=0; i<personList.length; i++) {
 		console.log(personList[i].name)
 	}
+
+
+	// ------------------------------------------------------------
+	// 강사님 방법
+	// ------------------------------------------------------------
+	
+	// tbody에서 찾기
+	console.log('=========================')
+	console.log('=========================')
+
+	let personList2 = [];
+
+	let trTags = document.querySelectorAll('tbody>tr');
+	console.log(trTags);
+
+	for(let i=0; i<trTags.length; i++) {
+		let name = trTags[i].children[0].textContent;
+		let hp = trTags[i].children[1].textContent;
+		let company = trTags[i].children[2].textContent;
+
+		let personVo = {
+		name: name,
+		hp: hp,
+		company: company
+		};
+
+		console.log(personVo)
+		console.log(personVo.name)
+
+		personList2.push(personVo);
+	}
+
+	console.log(personList2);
+
+	for(let i=0; i<personList2.length; i++){
+		console.log(personList2[i].name);
+	}
+	
+	
+	// // 정우성 라인
+	// console.log(trTags[0].children[0].textContent);		// 정우성
+	// console.log(trTags[0].children[1].textContent);		// 010-1111-1111
+	// console.log(trTags[0].children[2].textContent);		// 02-1111-1111
+
+	// let name = trTags[0].children[0].textContent;
+	// let hp = trTags[0].children[1].textContent;
+	// let company = trTags[0].children[2].textContent;
+
+	// let personVo = {
+	// 	name: name,
+	// 	hp: hp,
+	// 	company: company
+	// };
+
+	// console.log(personVo)
+
+	// // 이효리 라인
+	// console.log(trTags[1].children[0].textContent);		// 이효리
+	// console.log(trTags[1].children[1].textContent);		// 010-2222-2222
+	// console.log(trTags[1].children[2].textContent);		// 02-2222-2222
+
+	// // 박명수 라인
+	// console.log(trTags[2].children[0].textContent);		// 박명수
+	// console.log(trTags[2].children[1].textContent);		// 010-3333-3333
+	// console.log(trTags[2].children[2].textContent);		// 02-3333-3333
 
 });
 

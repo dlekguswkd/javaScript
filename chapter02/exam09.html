@@ -5,6 +5,12 @@
 <title>Insert title here</title>
 <link href="" rel="stylesheet">
 
+<style>
+	#p2 {
+		color: #ff0000;
+	}
+</style>
+
 </head>
 
 <body>
@@ -16,12 +22,72 @@
 		<li>다섯번째아이템입니다.</li>
 		<li>여섯번째아이템입니다.</li>
 	</ul>
-	
 
-</body>
 
+	<p id="p1" style="color: #0000ff;">안녕하세요</p>
+	<p id="p2">반갑습니다</p>
+
+
+
+<!-- ---------------------------------------------------- -->	
 <script>
+// DOM tree 완성된 직후
+document.addEventListener('DOMContentLoaded', function(){
+	console.log('완료');
+
+	// ul 태그로 불러오기		ul은 하나임
+	let ulTag = document.querySelector('ul');
+	console.log(ulTag);
+
+	// 폰트사이즈 변경
+	ulTag.style.fontSize = '40px';
+
+	// 겉에 선넣기 (한번에 주는방법)
+	ulTag.style.border = '1px solid #ff0000';
+
+	// li 첫번째줄만 폰트 바꾸기 (글꼴)
+	ulTag.firstElementChild.style.fontFamily = '궁서';
+
+	// li 첫번째줄만 배경색 바꾸기
+	ulTag.firstElementChild.style.backgroundColor = '#d6d6d6';
+
+	// 가로 
+	ulTag.firstElementChild.style.width = '400px';
+
+	// 패딩 주기
+	ulTag.firstElementChild.style.padding = '30px';
+
+	// 마진 주기
+	ulTag.firstElementChild.style.marginLeft = '50px';
+
+	// 선 두께
+	ulTag.lastElementChild.style.borderWidth = '5px';
+	// 선 스타일(모양)
+	ulTag.lastElementChild.style.borderStyle = 'dotted';
+	// 선 색깔
+	ulTag.lastElementChild.style.borderColor = '#ff0000';
+
+	// ul 의 앞에 나오는 점 삭제하기 (리스트의 블릿 안보이게)
+	ulTag.style.listStyleType = 'none';
+
+	///////////////////////////////////////////////////////////////////////////
+
+	let p1Tag = document.querySelector('#p1');
+	console.log(p1Tag);
+	console.log(p1Tag.style.color);		// 색깔 알려줘 rgb(0, 0, 255)
+
+	let p2Tag = document.querySelector('#p2');
+	console.log(p2Tag);
+	console.log(p2Tag.style.color);		// 아무것도 안알려줌 -> 태그에 직접알려주는것만 알려줌
+										// 외부에서 알려주는건 안알려줌
+	// 색깔 바꾸기
+	p2Tag.style.color = '#ff00ff';		// 빨강 -> 핑크 로 변경(글색깔)
+
+});
 
 </script>
+<!-- ---------------------------------------------------- -->
+
+</body>
 
 </html>

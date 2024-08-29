@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+    div {
+        width: 400px;
+        border: 1px solid #0000ff;
+    }
+
+    p {
+        border: 1px solid #000000;
+        background-color: #ff00ff;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+    <div>
+        <!-- beforebegin(시작전) -->
+        <p>
+            <!-- afterbegin(시작후)  -->
+            마바사아자차카타파하
+            <!-- beforeend(끝나기전) -->
+        </p>
+        <!-- afterend(끝난후) -->
+    </div>
+
+
+<!-- ---------------------------------------------------- -->
+<script>
+// DOM tree가 완성되었을때 (이벤트)
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('DOM tree 완료');
+
+    // p 태그 가져와서 내용바꾸기
+    let pTag = document.querySelector('p');
+    //pTag.textContent = '가나다라';
+    console.log(pTag);
+
+    // p태그 기준해서 글자넣기
+    pTag.insertAdjacentHTML('afterbegin', '<strong>가나다라</strong>'); // html 적용되서 나옴
+    pTag.insertAdjacentHTML('beforeend', 'abcd');
+    pTag.insertAdjacentHTML('beforebegin', '시작전');
+    pTag.insertAdjacentHTML('afterend', '끝난후');
+    
+    
+
+});
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>

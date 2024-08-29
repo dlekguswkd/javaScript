@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+
+</style>
+
+
+</head>
+
+<body>
+
+    <ul>
+        <!-- afterbegin -->
+        <li>첫번째 아이템 입니다.</li>
+        <li>두번째 아이템 입니다.</li>
+        <li>세번째 아이템 입니다.</li>
+        <li>네번째 아이템 입니다.</li>
+        <li>다섯번째 아이템 입니다.</li>
+        <!-- beforeend -->
+    </ul>
+
+    <button id="btnBefore" type="button">앞에추가</button>     <!-- 앞에 추가된 아이템 입니다 -->
+    <button id="btnAfter" type="button">뒤에추가</button>     <!-- 뒤에 추가된 아이템 입니다 -->
+
+
+
+<!-- ---------------------------------------------------- -->
+<script>
+// DOM tree가 완성되었을때 (이벤트)
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('DOM tree 완료');
+    
+    // 앞버튼 꺼내기
+    let btnBefore = document.querySelector('#btnBefore');
+    console.log(btnBefore);
+
+    // 앞버튼 클릭하면
+    btnBefore.addEventListener('click', function(){
+        console.log('앞버튼클릭')
+
+        // ul 태그로 꺼내기
+        let ulTag = document.querySelector('ul');
+        console.log(ulTag);
+
+        // 추가해주기
+        ulTag.insertAdjacentHTML('afterbegin', '<li>앞에 추가된 아이템 입니다.</li>')
+
+    });
+    
+    // --------------------------------------------------------------------------
+
+    // 뒤버튼 꺼내기
+    let btnAfter = document.querySelector('#btnAfter');
+    console.log(btnAfter);
+
+    // 뒤버튼 클릭하면
+    btnAfter.addEventListener('click', function(){
+        console.log('뒤버튼클릭')
+
+        // ul 태그로 꺼내기
+        let ulTag = document.querySelector('ul');
+        console.log(ulTag);
+
+        // 추가해주기
+        ulTag.insertAdjacentHTML('beforeend', '<li>뒤에 추가된 아이템 입니다.</li>')
+
+    });
+
+});
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>

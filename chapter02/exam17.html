@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+    ul {
+        width: 200px;
+        padding: 20px;
+        background-color: #00ffff;
+    }
+
+    ul>li {
+        border: 1px solid #000000;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+    <ul>
+        <li>첫번째 아이템 입니다.</li>
+        <li>두번째 아이템 입니다.</li>
+        <li>세번째 아이템 입니다.</li>
+        <li>네번째 아이템 입니다.</li>
+        <li>다섯번째 아이템 입니다.</li>
+    </ul>
+
+    <button id="btn" type="button">뒤에추가</button>
+
+<!-- ---------------------------------------------------- -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('DOM tree 완료');
+
+    // 버튼 가져오기
+    let btn = document.querySelector('#btn');
+    console.log(btn);
+
+    // ---------------------------------------------------------------
+    // 버튼 클릭 했을때     -> (추가)
+    btn.addEventListener('click', function(){
+        console.log('버튼 클릭');
+
+        // ul 가져오기
+        let ulTag = document.querySelector('ul');
+        console.log(ulTag);
+
+        ulTag.insertAdjacentHTML('beforeend', '<li>뒤에 추가된 아이템 입니다.</li>');
+    });
+    // ---------------------------------------------------------------
+
+    /* 추가되는 애들이 적용이 안됨
+    // li요소 가져오기
+    let liTags = document.querySelectorAll('li');
+    console.log(liTags);
+
+    // li요소를 클릭했을때      -> (삭제)
+    for(let i=0; i<liTags.length; i++) {
+        liTags[i].addEventListener('click', function(){
+            console.log('li요소 클릭')          // 추가되는애들은 클릭이 안됨
+        });
+    }
+    */
+
+    // 부모쪽에 걸고 클릭한애 알아내기 (위임)
+    // ul 요소 가져오기
+    let ulTag = document.querySelector('ul');
+    ulTag.addEventListener('click', function(event){
+        console.log('ul요소 클릭');
+        console.log(this);      // ul  (이벤트 가지고 있는애)
+        console.log(event.target);      // li (실제로 클릭 당한애)
+        
+        console.log(event.target.tagName);      // 태그이름 대문자!!!!!
+
+        // ul부분 클릭하면 다 사라지는거 방지 
+        if(event.target.tagName == 'LI') {      // 실제로 클릭한 태그이름이 LI이면 삭제
+            //event.target.textContent = '';
+            event.target.remove();      // 실제로 눌린애 삭제
+        }
+
+    });    
+
+    // ul에 클릭 할때
+    
+
+});
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>

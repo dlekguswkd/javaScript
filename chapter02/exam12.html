@@ -19,12 +19,37 @@
     </div>
     
 
-
-</body>
-
+<!-- ---------------------------------------------------- -->
 <script>
+//                         DOM tree 생성되었을때(완료됐을때)
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('완료');
+
+    // 버튼 뽑아내기
+    let btnTag = document.querySelector('#btn');
+    console.log(btnTag);
+
+    // 버튼에게          이상황이되면  이일을 해
+    // 버튼이 클릭될때 
+    btnTag.addEventListener('click', function(){
+        console.log('버튼클릭');
+
+        // 택스트영역 뽑아와서 택스트영역에 홍길동 출력
+        let h1Tag = document.querySelector('#display');
+        console.log(h1Tag);
+        h1Tag.textContent = '홍길동';       // 글씨 바꾸기
+        h1Tag.style.color = '#0000ff';      // 글 색상 바꾸기
+
+    });
+
+
+});
 
 
 </script>
+<!-- ---------------------------------------------------- -->
+
+
+</body>
 
 </html>

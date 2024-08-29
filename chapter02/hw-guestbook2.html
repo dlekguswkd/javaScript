@@ -28,19 +28,47 @@
 	</div>
 	<br>
 
-</body>
 
+<!-- ---------------------------------------------------- -->
 <script>
+document.addEventListener('DOMContentLoaded', function(){
+	console.log('dom 완성')
 
+	// 등록버튼 만들기
+	let btn = document.querySelector('#btnWrite');
+	console.log(btn);
 
+	// 버튼 누를때
+	btn.addEventListener('click', function(){
+		console.log('버튼 클릭');
 
+		// 태그 가져오기
+		let name = document.querySelector('[name="name"]');		// 이름칸
+		let password = document.querySelector('[type="password"]')	// 비밀번호칸
+		let content = document.querySelector('[name="content"]')	// 내용칸
+		
+		let guestbookVo = {
+			name: name.value, 	
+			password: password.value, 
+			content: content.value
+		}
 
+		console.log(guestbookVo);
 
+		name.value = '';
+		password.value = '';
+		content.value = '';
 
+	});
+
+});
 
 
 
 
 </script>
+<!-- ---------------------------------------------------- -->
+
+</body>
 
 </html>

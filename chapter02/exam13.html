@@ -20,10 +20,72 @@
         <button id="btnPlus" type="button" >더하기</button>
         <p id="display">0</p>
     </div>
-</body>
 
+
+<!-- ---------------------------------------------------- -->
 <script>
+// DOM tree가 완성되었을때 (이벤트)
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('DOM tree 완료');
+
+    // 버튼 잡기
+    let btnTag = document.querySelector('#btnPlus');
+    console.log(btnTag);
+
+    // 버튼을 클릭했을때 (이벤트)
+    btnTag.addEventListener('click', function(){
+        console.log('버튼 클릭');
+
+        // 태그가져오기 위에 올려두면 나중에 보기 편함
+        //let leftTag = document.querySelector('#left');
+        //let rightTag = document.querySelector('#right');
+        //let disTag = document.querySelector('#display');
+
+        // 왼쪽칸 잡기 왼쪽값 구하기
+        let leftTag = document.querySelector('#left');
+        console.log(leftTag);
+        console.log(leftTag.value);     // 사용자가 칸에 넣는값
+        let leftNo = Number(leftTag.value);         // 형변환 string -> number
+                                        // 형변환 안하면 + 할때 1+2 = 12가 나옴
+
+        // 오른쪽칸 잡기  오른쪽값 구하기
+        let rightTag = document.querySelector('#right');
+        console.log(rightTag);
+        console.log(rightTag.value);
+        let rightNo = Number(rightTag.value);
+
+        console.log('-----------------');
+        console.log(leftNo);
+        console.log(rightNo);
+        console.log('-----------------');
+
+        
+        // 계산하기
+        let sum = leftNo + rightNo;
+        console.log(sum);
+        
+        // 밑에 더한값나오는칸 잡기
+        let disTag = document.querySelector('#display');
+        // console.log(disTag);
+        // console.log(disTag.textContent);
+
+        // 출력하기
+        console.log('-----------------');
+        disTag.textContent = sum;
+        console.log(disTag.textContent);
+
+        // 칸에 들어있는 숫자 지우기 (다시 숫자넣을때 원래있던값을 지울필요가 없어짐)
+        leftTag.value = '';
+        rightTag.value = '';
+
+
+    });
+
+});
 
 </script>
+<!-- ---------------------------------------------------- -->
+
+</body>
 
 </html>

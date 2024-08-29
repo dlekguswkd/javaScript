@@ -41,19 +41,43 @@
 </head>
 
 <body>
-	<div class="box-red bold 50px">
+	<div class="box-red bold size50">
 		학교종이 땡땡땡<br>
 		어서모이자<br>
 		선생님이 우리를<br>
 		기다리신다<br>
 	<div>
 	
-
-</body>
-
+<!-- ---------------------------------------------------- -->
 <script>
-
+document.addEventListener('DOMContentLoaded', function(){
+	console.log('완료');
 	
+	let divTag = document.querySelector('div');
+	console.log(divTag);
+	console.log(divTag.className);
+	console.log(divTag.classList);
+
+	// divTag.classList.remove('size50');
+	// divTag.classList.remove('bold');
+	// divTag.classList.remove('box-red');
+	// divTag.classList.remove('size50', 'bold', 'box-red');
+	// console.log(divTag.className);
+
+	// divTag.classList.add('box-blue', 'italic');
+	
+	// box- blue 적용
+	divTag.classList.remove('box-red');
+	divTag.classList.add('box-blue');
+
+	// 한번에 적용하는법		크기50을  20으로 바꿔라
+	divTag.classList.replace('size50', 'size20');
+
+
+});
+
 </script>
+<!-- ---------------------------------------------------- -->
+</body>
 
 </html>

@@ -61,10 +61,41 @@
 	<p id="p14">문장2</p>
 
 
+<!-- ---------------------------------------------------- -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+	console.log('완료');
+
+	// #p11태그의 컨텐츠를 가져오세요
+	let p11Tag = document.querySelector('#p11');
+	console.log(p11Tag);
+	console.log(p11Tag.textContent);
+	console.log(p11Tag.innerHTML);
+
+	// p13태그의 텍스트를 "<strong>가나다라마바사아자차카타파하</strong>"
+	// textContent  내가준거자체가 글자야
+	let p13Tag = document.querySelector('#p13');
+	console.log(p13Tag);
+	console.log(p13Tag.textContent);
+	p13Tag.textContent = '<strong>가나다라마바사아자차카타파하</strong>';
+
+	// p14태그의 텍스트를 "<strong>가나다라마바사아자차카타파하</strong>"
+	// innerText	html에 적용까지 
+	let p14Tag = document.querySelector('#p14');
+	console.log(p14Tag);
+	console.log(p14Tag.innerHTML);
+	p14Tag.innerHTML = '<strong>가나다라마바사아자차카타파하</strong>';
+
+	// p1태그의 텍스트를 지우기
+	let p1Tag = document.querySelector('#p1');
+	console.log(p1Tag);
+	p1Tag.textContent = '';		
+
+});
+
+</script>
+<!-- ---------------------------------------------------- -->
 
 </body>
-
-<script>
-</script>
 
 </html>
