@@ -13,23 +13,24 @@
 	<input id="display" type="text"><br>
 	
 	<div id="btnArea">
-		<button id="btn9" type="button">9</button>
-		<button id="btn8" type="button">8</button>
+
 		<button id="btn7" type="button">7</button>
+		<button id="btn8" type="button">8</button>
+		<button id="btn9" type="button">9</button>
 		
 		<button id="btnDiv" type="button">/</button>
 		<br>
 		
-		<button id="btn6" type="button">6</button>
-		<button id="btn5" type="button">5</button>
 		<button id="btn4" type="button">4</button>
+		<button id="btn5" type="button">5</button>
+		<button id="btn6" type="button">6</button>
 		
 		<button id="btnMulti" type="button">*</button>
 		<br>
-		
-		<button id="btn3" type="button">3</button>
-		<button id="btn2" type="button">2</button>
+
 		<button id="btn1" type="button">1</button>
+		<button id="btn2" type="button">2</button>
+		<button id="btn3" type="button">3</button>
 		
 		<button id="btnPlus" type="button">+</button>
 		<br>
@@ -56,7 +57,41 @@ document.addEventListener('DOMContentLoaded', function(){
 	console.log(disTag);
 
 	// 계산결과칸 클릭할때
-	//disTag.addEventListener
+	disTag.addEventListener('click', function(){
+		console.log('계산결과칸 클릭');
+
+		//숫자칸 만들기
+		let btn0 = document.querySelector('#btn0');
+		let btn1 = document.querySelector('#btn1');
+		let btn2 = document.querySelector('#btn2');
+		let btn3 = document.querySelector('#btn3');
+		let btn4 = document.querySelector('#btn4');
+		let btn5 = document.querySelector('#btn5');
+		let btn6 = document.querySelector('#btn6');
+		let btn7 = document.querySelector('#btn7');
+		let btn8 = document.querySelector('#btn8');
+		let btn9 = document.querySelector('#btn9');
+
+		// 버튼 누르면 계산칸에 글씨 넣기
+
+
+
+		let btnList = [];
+		btnList.push.btn0;
+		btnList.push.btn1;
+		btnList.push.btn2;
+		btnList.push.btn3;
+		btnList.push.btn4;
+		btnList.push.btn5;
+		btnList.push.btn6;
+		btnList.push.btn7;
+		btnList.push.btn8;
+		btnList.push.btn9;
+
+		console.log(btnList[0]);
+
+
+	});
 
 });
 
