@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+
+</style>
+
+</head>
+
+<body>
+
+    <div>
+        <form id="guestForm" action="/mysite/guestbook/write" method="get">
+            <table border="1" width="540px">
+                <tr>
+                    <td>이름</td><td><input type="text" name="name" value=""></td>
+                    <td>비밀번호</td><td><input type="password" name="pw" value=""></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><textarea cols="72" rows="5" name="content"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button id="btnWrite" type="submit">등록</button></td>
+                    <!-- 버튼 타입이 submit일때 (보내는) form에 싸주기 -->
+                </tr>
+            </table>
+        </form>
+	</div>
+	<br>
+
+
+<!-- ---------------------------------------------------- -->
+<script>
+// DOM tree가 완성되었을때 (이벤트)
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('dom tree 완성');
+
+    // 시각적으로는 submit에 걸고싶지만 form을 다 들고와야함
+    let guestForm = document.querySelector('#guestForm');
+    console.log(guestForm);
+
+    // 이벤트 넣어주기           전송 (클릭아님->제출)
+    guestForm.addEventListener('submit', function(event){
+        console.log('전송버튼 클릭');
+        //event.preventDefault();     // 너 원래하던거 하지마 (전송하는 -> 창이 넘어감)
+
+        // 태그(dom) 가져오기
+        let nameTag = document.querySelector('input[name="name"]');
+        let passwordTag = document.querySelector('input[name="pw"]');
+        
+
+        // 이름 체크
+        let name = nameTag.value.trim();        // trim은 앞뒤 공백 없애기
+        if(name == '') {                        // 이름이 없으면
+            window.alert('이름을 입력하세요');     // alert -> 창이 뜸 (window.alert)윈도우(브라우저)생략가능
+            event.preventDefault();             // 이름 안넣었으니까 보내려던거 멈춰 (전송멈추기)
+            return false;                   // 이걸 안넣어주면 뒤에도 없을때 alert 창이 다 뜸  
+                            // false를 줌으로써 일이 아래로가 아닌 위로 가게하는 행위 다시 시작하게하는
+        }
+
+        // 패스워드 체크
+        let password = passwordTag.value.trim();
+        if(password == '') {            // 패스워드가 없으면 
+            alert('비밀번호를 입력하세요');
+            event.preventDefault();   
+            return false;
+        }
+
+        // 체크사항을 모두 만족
+        // 서버로 전송 (주소만들고 엔터)
+
+    });
+
+});
+
+
+
+</script>
+<!-- ---------------------------------------------------- -->
+
+</body>
+
+</html>
