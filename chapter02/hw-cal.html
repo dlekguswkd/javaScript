@@ -53,42 +53,26 @@ document.addEventListener('DOMContentLoaded', function(){
 	console.log('DOM tree 완료');
 
 	// 계산결과 나오는칸 만들기
-	let disTag = document.querySelector('#display')
-	console.log(disTag);
+	let disTag = document.querySelector('#display');
 
 	// 계산결과칸 클릭할때
 	disTag.addEventListener('click', function(){
 		console.log('계산결과칸 클릭');
 
-		//숫자칸 만들기
-		let btn0 = document.querySelector('#btn0');
-		let btn1 = document.querySelector('#btn1');
-		let btn2 = document.querySelector('#btn2');
-		let btn3 = document.querySelector('#btn3');
-		let btn4 = document.querySelector('#btn4');
-		let btn5 = document.querySelector('#btn5');
-		let btn6 = document.querySelector('#btn6');
-		let btn7 = document.querySelector('#btn7');
-		let btn8 = document.querySelector('#btn8');
-		let btn9 = document.querySelector('#btn9');
+		// 밑에 칸 만들기
+		let btnTag = document.querySelector("#btnArea");
+		btnTag.addEventListener("click", function (event) {
+			// 버튼하나당
+			let button = event.target;	// 딱 내가 고른거
+			let text = button.innerText;	// 누른숫자나 사칙연산
 
-		// 버튼 누르면 계산칸에 글씨 넣기
-
-
-
-		let btnList = [];
-		btnList.push.btn0;
-		btnList.push.btn1;
-		btnList.push.btn2;
-		btnList.push.btn3;
-		btnList.push.btn4;
-		btnList.push.btn5;
-		btnList.push.btn6;
-		btnList.push.btn7;
-		btnList.push.btn8;
-		btnList.push.btn9;
-
-		console.log(btnList[0]);
+			if(text == 'C') {
+				disTag.value = '';
+			}else {
+				disTag.value += text;
+			}
+			
+		});
 
 		// spilt 자르기
 
